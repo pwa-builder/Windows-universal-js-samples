@@ -10,7 +10,7 @@
  * @alias Toggle FullScreen mode
  * @method toggleFullscreen
  * @param {boolean} [forceFullscreen=false] Force full-screen mode.
- * @returns {bool} Indicates if mode switch was successful.
+ * @returns {boolean} Indicates if mode switch was successful.
  */
 function toggleFullscreen(forceFullscreen) {
     if(!window.Windows) return false;
