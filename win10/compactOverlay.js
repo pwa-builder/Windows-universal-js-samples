@@ -1,6 +1,6 @@
 /**
  * @file
- * The CompactOverlay feature set.
+ * The CompactOverlay (Video Player)
  */
 
 /**
