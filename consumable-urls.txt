@@ -8,3 +8,4 @@ https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/maste
 https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/desktopBg.js
 https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/lockscreenBg.js
 https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/msGraphContacts.js
+https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/msGraphCalendar.js
