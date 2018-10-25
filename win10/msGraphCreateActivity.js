@@ -15,7 +15,7 @@
  * @see https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/activity-feed-api-overview
  */
 
-function createActivity(token, activityObject, apiVersion = "v1.0") {
+async function createActivity(token, activityObject, apiVersion = "v1.0") {
   if (token) {
     const headers = new Headers();
     const bearer = "Bearer " + token;
