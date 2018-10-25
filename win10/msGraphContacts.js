@@ -14,7 +14,7 @@
  * @see https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_list_contacts
  */
 
-function getContacts(token, apiVersion = "1.0") {
+function getContacts(token, apiVersion = "v1.0") {
   if (token) {
     const headers = new Headers();
     const bearer = "Bearer " + token;
