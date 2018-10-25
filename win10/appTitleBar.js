@@ -28,7 +28,7 @@ function changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgrou
                                 buttonInactiveBackgroundColor, buttonInactiveForegroundColor ){
 
   if (window.Windows && Windows.UI.ViewManagement.ApplicationView) {
-    var customColors = {
+    const customColors = {
       backgroundColor: backgroundColor,
       foregroundColor:  foregroundColor,
       buttonBackgroundColor: buttonBackgroundColor,
@@ -43,7 +43,7 @@ function changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgrou
       buttonInactiveForegroundColor: buttonInactiveForegroundColor
     };
 
-    var titleBar = Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar;
+    const titleBar = Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar;
     titleBar.backgroundColor = customColors.backgroundColor;
     titleBar.foregroundColor = customColors.foregroundColor;
     titleBar.inactiveBackgroundColor = customColors.inactiveBackgroundColor;

@@ -15,10 +15,10 @@
  */
 async function toggleCompactOverlayMode(forceCompactOverlay = false, videoElement,) {
   if (window.Windows) {
-    var applicationView = Windows.UI.ViewManagement.ApplicationView;
-    var currentMode = applicationView.getForCurrentView().viewMode;
+    const applicationView = Windows.UI.ViewManagement.ApplicationView;
+    const currentMode = applicationView.getForCurrentView().viewMode;
 
-    var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay
+    let newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay
       ? Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay
       : Windows.UI.ViewManagement.ApplicationViewMode.default;
 
