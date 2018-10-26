@@ -21,19 +21,19 @@ async function addTimelineActivity(id, title, bodyText, imagePath, activationUri
         return false;
     }
 
-    var imageUrl = window.location.protocol + '//' + window.location.host + imagePath;
+    const imageUrl = window.location.protocol + '//' + window.location.host + imagePath;
 
     // build adaptive card
-    var cardJson = Object.assign({}, adaptiveCardTemplate);
+    let cardJson = Object.assign({}, adaptiveCardTemplate);
     cardJson.backgroundImage = imageUrl;
     cardJson.body[0].items[0].text = title;
     cardJson.body[0].items[1].text = bodyText;
-    var adaptiveCard = Windows.UI.Shell.AdaptiveCardBuilder.createAdaptiveCardFromJson(JSON.stringify(cardJson));
+    const adaptiveCard = Windows.UI.Shell.AdaptiveCardBuilder.createAdaptiveCardFromJson(JSON.stringify(cardJson));
 
-    var channel = Windows.ApplicationModel.UserActivities.UserActivityChannel.getDefault();
+    const channel = Windows.ApplicationModel.UserActivities.UserActivityChannel.getDefault();
 
     // create and save activity
-    var activity = await channel.getOrCreateUserActivityAsync(id);
+    const activity = await channel.getOrCreateUserActivityAsync(id);
     activity.visualElements.content = adaptiveCard;
     activity.visualElements.displayText = bodyText;
     activity.activationUri = new Windows.Foundation.Uri(activationUri);
@@ -47,8 +47,8 @@ async function addTimelineActivity(id, title, bodyText, imagePath, activationUri
     lastKnownSession = activity.createSession();
 }
 
-var lastKnownSession = null;
-var adaptiveCardTemplate = {
+let lastKnownSession = null;
+const adaptiveCardTemplate = {
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "type": "AdaptiveCard",
     "version": "1.0",

@@ -13,17 +13,37 @@
  * @returns {Promise} Promise with new mode value (1=CompactOverlay | 0=Default).
  * @see https://docs.microsoft.com/en-us/uwp/api/windows.ui.viewmanagement.applicationviewmode
  */
-function toggleCompactOverlayMode(forceCompactOverlay = false) {
-    if(!window.Windows) return Promise.resolve("unsupported");
+async function toggleCompactOverlayMode(forceCompactOverlay = false, videoElement,) {
+  if (window.Windows) {
+    const applicationView = Windows.UI.ViewManagement.ApplicationView;
+    const currentMode = applicationView.getForCurrentView().viewMode;
 
-    var applicationView = Windows.UI.ViewManagement.ApplicationView;
-    var currentMode = applicationView.getForCurrentView().viewMode;
-
-    var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay
-        ? Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay
-        : Windows.UI.ViewManagement.ApplicationViewMode.default;
+    let newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay
+      ? Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay
+      : Windows.UI.ViewManagement.ApplicationViewMode.default;
 
     return applicationView.getForCurrentView()
-        .tryEnterViewModeAsync(newMode)
-        .then(() => newMode);
+      .tryEnterViewModeAsync(newMode)
+      .then(() => newMode);
+  } else if ('pictureInPictureEnabled' in document) {
+    // for the web picture in picture api
+    if (videoElement instanceof HTMLVideoElement) {
+      if (videoElement !== document.pictureInPictureElement) {
+        try {
+          await videoElement.requestPictureInPicture();
+          return Promise.resolve(1);
+        }
+        catch(error) {
+          console.error(`There was an error moving the video to PIP mode: ${error}`)
+        }
+      } else {
+        await document.exitPictureInPicture();
+        return Promise.resolve(0);
+      }
+    } else {
+      console.error('the element passed in must be a video element');
+    }
+  } else {
+    return Promise.resolve('unsupported on this platform or browser')
+  }
 }

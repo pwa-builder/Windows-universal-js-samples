@@ -14,9 +14,9 @@
 
 function checkForDarkTheme(){
   if ( window.Windows ){
-    // Change the theme
-    var uiSettings = new Windows.UI.ViewManagement.UISettings();
-    var color = uiSettings.getColorValue(Windows.UI.ViewManagement.UIColorType.background)
+    // Change the theme to light or dark
+    const uiSettings = new Windows.UI.ViewManagement.UISettings();
+    const color = uiSettings.getColorValue(Windows.UI.ViewManagement.UIColorType.background)
     if(color.b === 0){
       return "dark"
     }else{

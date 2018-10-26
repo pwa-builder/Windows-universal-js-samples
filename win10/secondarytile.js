@@ -18,13 +18,13 @@
  * @returns {Promise} promise.
  */
 function createSecondaryTile(text, activationArguments, tileId = null, logoUri = null, uriSmallLogo = null) {
-    var currentTime = new Date();
+    const currentTime = new Date();
     logoUri = logoUri || new Windows.Foundation.Uri("ms-appx:///images/Square150x150Logo.png");
     uriSmallLogo = uriSmallLogo || new Windows.Foundation.Uri("ms-appx:///images/Square44x44Logo.png");
-    var newTileDesiredSize = Windows.UI.StartScreen.TileOptions.showNameOnLogo;
-    tileId = tileId || arctivationArguments;
+    const newTileDesiredSize = Windows.UI.StartScreen.TileOptions.showNameOnLogo;
+    tileId = tileId || activationArguments;
 
-    var tile;
+    let tile;
     try {
         tile = new Windows.UI.StartScreen.SecondaryTile(tileId, text, text, activationArguments,
             newTileDesiredSize, logoUri);
@@ -32,11 +32,11 @@ function createSecondaryTile(text, activationArguments, tileId = null, logoUri =
         //Utils.error('failed to create secondary tile', e);
         return;
     }
-    var element = document.body;
+    const element = document.body;
     if (element) {
-        var selectionRect = element.getBoundingClientRect();
-        var buttonCoordinates = { x: selectionRect.left, y: selectionRect.top, width: selectionRect.width, height: selectionRect.height };
-        var placement = Windows.UI.Popups.Placement.above;
+        const selectionRect = element.getBoundingClientRect();
+        const buttonCoordinates = { x: selectionRect.left, y: selectionRect.top, width: selectionRect.width, height: selectionRect.height };
+        const placement = Windows.UI.Popups.Placement.above;
         return new Promise((resolve, reject) => {
             try {
                 tile.requestCreateForSelectionAsync(buttonCoordinates, placement).done((isCreated) => {
