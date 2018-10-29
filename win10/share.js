@@ -11,7 +11,7 @@
  * @param {string} Title title of content to share.
  * @param {string} Text text of content to share.
  * @param {string} url url of content to share.
- * @see https://raw.githubusercontent.com/JimGaleForce/Windows-universal-js-samples/master/win10/images/shareCommand.PNG
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/shareCommand.PNG
  * @returns {boolean} success
  */
 

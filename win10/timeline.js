@@ -14,7 +14,7 @@
  * @param {string} bodyText Secondary text lines of the Adaptive Card.
  * @param {string} imagePath Relative path to the background image.
  * @param {string} activationUri The activation Uniform Resource Identifier (URI). Can be an Internet address or a URL with custom protocol prefix that the application understands.
- * @see https://docs.microsoft.com/en-us/windows/uwp/launch-resume/useractivities
+ * @see @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/timeline.gif
  */
 async function addTimelineActivity(id, title, bodyText, imagePath, activationUri) {
     if (!window.Windows) {

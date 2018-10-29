@@ -14,7 +14,7 @@
  * @param {string} tileId Id of the secondary tile (so it can be replaced by a matching id). Defaults to the activationArguments.
  * @param {string} logoUri Uri of the logo to display on the tile.
  * @param {string} uriSmallLogo Uri of the small logo to display on the tile.
- * @see https://raw.githubusercontent.com/JimGaleForce/Windows-universal-js-samples/master/win10/images/pinCommand.PNG
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/pinCommand.PNG
  * @returns {Promise} promise.
  */
 function createSecondaryTile(text, activationArguments, tileId = null, logoUri = null, uriSmallLogo = null) {

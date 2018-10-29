@@ -20,7 +20,7 @@
  * @param {Rgb} [inactiveForegroundColor={ a: 255, r: 232, g: 211, b: 162 }] RGB inactive foreround color.
  * @param {Rgb} [buttonInactiveBackgroundColor={ a: 255, r: 135, g: 141, b: 199 }] RGB button inactive background color.
  * @param {Rgb} [buttonInactiveForegroundColor={ a: 255, r: 232, g: 211, b: 162 }] RGB button inactive foreground color.
- * @see https://raw.githubusercontent.com/JimGaleForce/Windows-universal-js-samples/master/win10/images/appBar.PNG
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/appBar.PNG
  */
 
 function changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgroundColor, buttonForegroundColor, 

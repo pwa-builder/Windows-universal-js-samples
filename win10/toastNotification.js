@@ -12,7 +12,7 @@
  * @param {string} title The first line of the notification.
  * @param {string} body The secondary text lines.
  * @param {string} imagePath Relative path to the background image.
- *
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/toast.jpg
  */
 function showToastNotification(title, body, imagePath) {
     if (!window.Windows) return Promise.resolve(false);
