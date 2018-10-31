@@ -1,0 +1,10 @@
+### YamlMime:Sample
+sample:
+- name: UWP Javascript samples
+  description: Javascript API samples for the Universal Windows Platform.
+  generateZip: true
+  author: boyofgreen
+  languages:
+  - javascript
+  technologies:
+  - windows
