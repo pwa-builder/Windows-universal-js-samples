@@ -6,15 +6,13 @@
 /**
  * This allows you to authenticate your users with a microsoft account or Acitve Directory account to get access to the graph
  *
-//  * @alias Create MSFT Graph Authentication 
-//  * @method createActivity 
- * @param {object} userAgentApplication The userAgentApplication object will help you doing the authentication job And get the token to do Graph API calls
- * @param {object} user User object return by MSAL lib
+ * @param {object} [userAgentApplication = ""] The userAgentApplication object will help you doing the authentication job And get the token to do Graph API calls
+ * @param {object} [user = ""] User object return by MSAL lib
  * @param {object} [msalconfig = {
             clientID: "54a0ef8a-3934-49f4-85c8-f8e32511fd93",
             redirectUri: location.origin
-        };] Register your app there: https://apps.dev.microsoft.com/portal/register-app & add a web platform to get a Client ID If you already did, retrieve the Client ID from: https://apps.dev.microsoft.com/#/appList
- * @param {object} [graphAPIScopes = ["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"]] Permissions you're requesting to do your future Graph API calls
+        }] Register your app there: https://apps.dev.microsoft.com/portal/register-app & add a web platform to get a Client ID If you already did, retrieve the Client ID from: https://apps.dev.microsoft.com/#/appList
+ * @param {object} [graphAPIScopes = \["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"\]] Permissions you're requesting to do your future Graph API calls
  * @see
  */
 
