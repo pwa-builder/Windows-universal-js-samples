@@ -6,6 +6,8 @@
 /**
  * This allows you to authenticate your users with a microsoft account or Acitve Directory account to get access to the graph
  *
+  * @alias Create MSFT Graph Authentication 
+  * @method createAuth
  * @param {object} [userAgentApplication = ""] The userAgentApplication object will help you doing the authentication job And get the token to do Graph API calls
  * @param {object} [user = ""] User object return by MSAL lib
  * @param {object} [msalconfig = {
@@ -50,6 +52,7 @@
                 console.log("You can now do calls to Graph API starting from here.");
             }
         }
+        
         //example element to attache a login button to
         document.getElementById("Login").addEventListener("click", () => {
             // Call this code on the click event of your login button
