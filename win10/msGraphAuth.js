@@ -14,7 +14,7 @@
             clientID: "123ABC-1234-1234-1234-SAMPLE-ID",
             redirectUri: location.origin
         }] Register your app there: https://apps.dev.microsoft.com/portal/register-app & add a web platform to get a Client ID If you already did, retrieve the Client ID from: https://apps.dev.microsoft.com/#/appList
- * @param {object} [graphAPIScopes = ["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"\t]] Permissions you're requesting to do your future Graph API calls
+ * @param {object} [graphAPIScopes = ["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"] ] Permissions you're requesting to do your future Graph API calls
  * @see
  */
 
