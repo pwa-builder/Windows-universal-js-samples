@@ -6,56 +6,45 @@
 /**
  * This allows you to authenticate your users with a microsoft account or Acitve Directory account to get access to the graph
  *
-  * @alias Create MSFT Graph Authentication 
-  * @method createAuth
- * @param {object} [userAgentApplication = ""] The userAgentApplication object will help you doing the authentication job And get the token to do Graph API calls
- * @param {object} [user = ""] User object return by MSAL lib
- * @param {object} [msalconfig = {
-            clientID: "123ABC-1234-1234-1234-SAMPLE-ID",
-            redirectUri: location.origin
-        }] Register your app there: https://apps.dev.microsoft.com/portal/register-app & add a web platform to get a Client ID If you already did, retrieve the Client ID from: https://apps.dev.microsoft.com/#/appList
- * @param {object} [graphAPIScopes = ["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"] ] Permissions you're requesting to do your future Graph API calls
- * @see
+ * @alias Create MSFT Graph Authentication 
+ * @method authWithGraph
+ * @param {object} [scopes = ["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"] ] Permissions you're requesting to do your future Graph API calls
+ * @param {object} [clientID = ""] Follow these docs to register your app and receive a clientID https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/README.md#prerequisite
+ * @see https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/README.md#prerequisite
  */
 
-        // The userAgentApplication object will help you doing the authentication job
-        // And get the token to do Graph API calls
-        userAgentApplication = new Msal.UserAgentApplication(msalconfig.clientID, null, loginCallback, {
-            redirectUri: msalconfig.redirectUri
-        });
 
-        //Previous version of msal uses redirect url via a property
-        if (userAgentApplication.redirectUri) {
-            userAgentApplication.redirectUri = msalconfig.redirectUri;
-        }
+async function authWithGraph(scopes, clientID) {
+  if (clientID && scopes) {
+    const userAgentApplication = new Msal.UserAgentApplication(config.clientID, null, authRedirectCallback);
+    try {
+      await userAgentApplication.loginPopup(scopes);
+    }
+    catch (error) {
+      console.error('Error during login', error);
+    }
 
-        // If page is refreshed, continue to display user info
-        if (!userAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
-            user = userAgentApplication.getUser();
-            if (user) {
-                console.log("user: " + user.name);
-            }
-        }
+    try {
+      // Login success
+      const accessToken = await userAgentApplication.acquireTokenSilent(scopes);
+      return accessToken;
+    }
+    catch (error) {
+      // AcquireTokenSilent Failure, send an interactive request.
+      // This will show the Microsoft Account login UI again
+      const accessToken = await userAgentApplication.acquireTokenPopup(scopes)
+      return accessToken;
+    }
+  } else {
+    console.log("You must supply a client id and authentication scopes for your app");
+  }
+}
 
-        function showError(endpoint, error, errorDesc) {
-            var formattedError = JSON.stringify(error, null, 4);
-            if (formattedError.length < 3) {
-                formattedError = error;
-            }
-            console.error(error);
-        }
 
-        function loginCallback(errorDesc, token, error, tokenType) {
-            if (errorDesc) {
-                showError(msal.authority, error, errorDesc);
-            } else {
-                console.log("You can now do calls to Graph API starting from here.");
-            }
-        }
-
-        //example element to attache a login button to
-        document.getElementById("Login").addEventListener("click", () => {
-            // Call this code on the click event of your login button
-            userAgentApplication.loginRedirect(graphAPIScopes);   
-        });
-
+function authRedirectCallback(errorDesc, token, error, tokenType) {
+  if (error) {
+    console.error(errorDesc, error);
+  } else {
+    return token;
+  }
+}
