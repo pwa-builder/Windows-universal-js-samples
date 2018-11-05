@@ -11,7 +11,7 @@
  * @param {string} token An authentication token fro the MSFT Graph API.
  * @param {string} apiVersion The version of the MSFT Graph API you want to call. Set to 1.0 by default. Possible values are `1.0` and `beta`.
  * @returns {array} events
- * @see https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_list_events
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/graphCalendar.png
  */
 
 async function getCalendarEvents(token, apiVersion = "v1.0") {

@@ -10,6 +10,7 @@
  * @alias Create Dark Theme Check
  * @method checkForDarkTheme
  * @returns {string} theme
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/darkTheme.png
  */
 
 function checkForDarkTheme(){
