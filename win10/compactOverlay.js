@@ -11,7 +11,7 @@
  * @method toggleCompactOverlayMode
  * @param {boolean} [forceCompactOverlay=false] Force Compact Overlay mode.
  * @returns {Promise} Promise with new mode value (1=CompactOverlay | 0=Default).
- * @see https://docs.microsoft.com/en-us/uwp/api/windows.ui.viewmanagement.applicationviewmode
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/compactOverlay.png
  */
 async function toggleCompactOverlayMode(forceCompactOverlay = false, videoElement,) {
   if (window.Windows) {
