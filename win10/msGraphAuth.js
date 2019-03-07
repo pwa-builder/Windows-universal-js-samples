@@ -50,3 +50,4 @@ function authRedirectCallback(errorDesc, token, error, tokenType) {
     return token;
   }
 }
+ 
