@@ -8,7 +8,7 @@
  *
  * @alias Create MSFT Graph Authentication 
  * @method authWithGraph
- * @param {object} [scopes = ["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"] ] Permissions you're requesting to do your future Graph API calls
+ * @param {object} [scopes = ["https://graph.microsoft.com/contacts.read", "https://graph.microsoft.com/user.read", "https://graph.microsoft.com/sites.readwrite.all"\] ] Permissions you're requesting to do your future Graph API calls
  * @param {object} [clientID = ""] Follow these docs to register your app and receive a clientID https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/README.md#prerequisite
  * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/images/graphAuth.png
  */
