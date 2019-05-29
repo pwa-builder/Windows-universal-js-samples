@@ -2,5 +2,4 @@ https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/w
 https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/msGraphContacts.js
 https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/msGraphCalendar.js
 https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/msGraphCreateActivity.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/timeline.js
 https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/share.js
