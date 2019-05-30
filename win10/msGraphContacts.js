@@ -6,10 +6,10 @@
 /**
  * This call returns the Contacts for the signed in user from the Microsoft Graph API.
  *
- * @alias Create MSFT Graph Contacts API
+ * @alias Microsoft Graph Contacts API
  * @method getContacts
- * @param {string} token An authentication token fro the MSFT Graph API.
- * @param {string} apiVersion The version of the MSFT Graph API you want to call. Set to 1.0 by default. Possible values are `1.0` and `beta`.
+ * @param {string} token An authentication token fro the Microsoft Graph API.
+ * @param {string} apiVersion The version of the Microsoft Graph API you want to call. Set to 1.0 by default. Possible values are `1.0` and `beta`.
  * @returns {array} contacts
  * @see 
  */

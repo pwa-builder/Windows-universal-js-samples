@@ -6,11 +6,11 @@
 /**
  * This creates a new user activity and posts it to the MSFT Graph API.
  *
- * @alias Create MSFT Graph Activity API
+ * @alias Microsoft Graph Activity API
  * @method createActivity
- * @param {string} token An authentication token from the MSFT Graph API.
- * @param {object} [activityObject = ""] activityObject  An MSFT Graph Activity object https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/projectrome_activity
- * @param {string} apiVersion The version of the MSFT Graph API you want to call. Set to 1.0 by default. Possible values are `1.0` and `beta`.
+ * @param {string} token An authentication token from the Microsoft Graph API.
+ * @param {object} [activityObject = ""] activityObject  An Microsoft Graph Activity object https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/projectrome_activity
+ * @param {string} apiVersion The version of the Microsoft Graph API you want to call. Set to 1.0 by default. Possible values are `1.0` and `beta`.
  * @returns {object} activity
  * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/images/timeline.gif
  */

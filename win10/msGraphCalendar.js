@@ -6,10 +6,10 @@
 /**
  * This call returns the Calendar events for the signed in user from the Microsoft Graph API.
  *
- * @alias Create MSFT Graph Calendar API
+ * @alias Microsoft Graph Calendar API
  * @method getCalendarEvents
- * @param {string} token An authentication token fro the MSFT Graph API.
- * @param {string} apiVersion The version of the MSFT Graph API you want to call. Set to 1.0 by default. Possible values are `1.0` and `beta`.
+ * @param {string} token An authentication token for the Microsoft Graph API.
+ * @param {string} apiVersion The version of the Microsoft Graph API you want to call. Set to 1.0 by default. Possible values are `1.0` and `beta`.
  * @returns {array} events
  * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/images/graphCalendar.png
  */

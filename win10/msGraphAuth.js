@@ -6,7 +6,7 @@
 /**
  * This allows you to authenticate your users with a microsoft account or Acitve Directory account to get access to the graph
  *
- * @alias Create MSFT Graph Authentication 
+ * @alias Micorosft Graph Authentication 
  * @method authWithGraph
  * @param {object} [scopes = ""] Array of API URLs you are requesting permissions for future Graph API calls
  * @param {object} [clientID = ""] Follow these docs to register your app and receive a clientID https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/README.md#prerequisite
