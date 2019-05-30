@@ -20,6 +20,7 @@
  * @param {Rgb} [inactiveForegroundColor={ a: 255, r: 232, g: 211, b: 162 }] RGB inactive foreround color.
  * @param {Rgb} [buttonInactiveBackgroundColor={ a: 255, r: 135, g: 141, b: 199 }] RGB button inactive background color.
  * @param {Rgb} [buttonInactiveForegroundColor={ a: 255, r: 232, g: 211, b: 162 }] RGB button inactive foreground color.
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/appBar.PNG
  */
 
 function changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgroundColor, buttonForegroundColor, 
@@ -28,7 +29,7 @@ function changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgrou
                                 buttonInactiveBackgroundColor, buttonInactiveForegroundColor ){
 
   if (window.Windows && Windows.UI.ViewManagement.ApplicationView) {
-    var customColors = {
+    const customColors = {
       backgroundColor: backgroundColor,
       foregroundColor:  foregroundColor,
       buttonBackgroundColor: buttonBackgroundColor,
@@ -43,7 +44,7 @@ function changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgrou
       buttonInactiveForegroundColor: buttonInactiveForegroundColor
     };
 
-    var titleBar = Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar;
+    const titleBar = Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar;
     titleBar.backgroundColor = customColors.backgroundColor;
     titleBar.foregroundColor = customColors.foregroundColor;
     titleBar.inactiveBackgroundColor = customColors.inactiveBackgroundColor;

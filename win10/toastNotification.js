@@ -12,32 +12,32 @@
  * @param {string} title The first line of the notification.
  * @param {string} body The secondary text lines.
  * @param {string} imagePath Relative path to the background image.
- *
+ * @see https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/images/toast.jpg
  */
 function showToastNotification(title, body, imagePath) {
     if (!window.Windows) return Promise.resolve(false);
 
-    var imageUrl = window.location.protocol + '//' + window.location.host + imagePath;
+    const imageUrl = window.location.protocol + '//' + window.location.host + imagePath;
 
     // Create ToastNotification as XML Doc
-    var toastXml = new Windows.Data.Xml.Dom.XmlDocument();
+    const toastXml = new Windows.Data.Xml.Dom.XmlDocument();
     toastXml.loadXml(toastNotificationXmlTemplate);
 
     // Update the background image
-    var images = toastXml.getElementsByTagName('image');
+    let images = toastXml.getElementsByTagName('image');
     images[0].setAttribute('src', imageUrl);
 
     // Set notification texts
-    var textNodes = toastXml.getElementsByTagName('text');
+    let textNodes = toastXml.getElementsByTagName('text');
     textNodes[0].innerText = title;
     textNodes[1].innerText = body;
 
     // Create a toast notification from the XML, then create a ToastNotifier object to send the toast.
-    var toast = new Windows.UI.Notifications.ToastNotification(toastXml);
+    const toast = new Windows.UI.Notifications.ToastNotification(toastXml);
     Windows.UI.Notifications.ToastNotificationManager.createToastNotifier().show(toast);
 }
 
-var toastNotificationXmlTemplate =
+const toastNotificationXmlTemplate =
 `<toast>
     <visual>
         <binding template="ToastGeneric">

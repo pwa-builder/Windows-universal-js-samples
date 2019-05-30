@@ -1,9 +1,5 @@
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/tile.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/secondarytile.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/darkTheme.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/appTitleBar.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/toastNotification.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/compactOverlay.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/timeline.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/desktopBg.js
-https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/master/win10/lockscreenBg.js
+https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/msGraphAuth.js
+https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/msGraphContacts.js
+https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/msGraphCalendar.js
+https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/msGraphCreateActivity.js
+https://raw.githubusercontent.com/pwa-builder/Windows-universal-js-samples/dev/win10/share.js
