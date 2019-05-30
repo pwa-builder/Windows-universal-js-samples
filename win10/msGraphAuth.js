@@ -4,7 +4,7 @@
  */
 
 /**
- * This allows you to authenticate your users with a microsoft account or Acitve Directory account to get access to the graph
+ * This allows you to authenticate your users with a Microsoft account or Active Directory account to get access to the graph
  *
  * @alias Microsoft Graph Authentication 
  * @method authWithGraph
